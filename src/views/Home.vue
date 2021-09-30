@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    Home
-    <p>登入狀態</p>
-    <p v-if="$store.state.user.username != ''">User : {{ $store.state.user.username }}</p>
+    <p>登入狀態： {{ $store.state.loginState }}</p>
+    <p v-if="$store.state.user.username != ''">UserName : {{ $store.state.user.username }}</p>
     <p v-else>尚未登入</p>
+    <p>token :  {{ $store.state.token }}</p>
     <br>
   </div>
 </template>
@@ -16,6 +16,24 @@ export default {
   name: 'Home',
   components: {
     // HelloWorld
+  },
+  data () {
+    return {
+    }
+  },
+  created () {
+    this.$store.commit('Login')
+    if (this.$store.state.token) {
+      if (this.$store.state.token === null) {
+        console.log('Token驗證失敗')
+        this.$router.push('/login')
+      } else if (this.$store.state.token === 'fake-token') {
+        console.log('Token驗證成功')
+        this.$store.commit('GetUserInfo')
+      }
+    } else {
+      this.$router.push('/login')
+    }
   }
 }
 </script>

@@ -41,8 +41,41 @@ export default {
   },
   methods: {
     Login () {
+      // mock login
+      var axios = require('axios')
+      var MockAdapter = require('axios-mock-adapter')
 
+      var mock = new MockAdapter(axios)
+      mock.onPost('/api/v1/login', {
+        params: {
+          user: {
+            username: 'test',
+            password: 'test'
+          }
+        }
+      }).reply(200, {
+        user: {
+          id: 1,
+          username: 'test',
+          email: 'test@aiplux.com'
+        },
+        token: 'fake-token'
+      })
+      this.$http.post('/api/v1/login', { params: { user: { username: this.$store.state.user.username, password: this.$store.state.user.password } } }).then((response) => {
+        localStorage.setItem('user', JSON.stringify(response.data.user))
+        localStorage.setItem('token', response.data.token)
+        // localStorage.getItem('user')
+        // localStorage.getItem('token')
+        // console.log('登入成功')
+        // console.log(this.$store.state.loginState)
+        this.$store.commit('Login')
+        this.$router.push('/')
+      }).catch((error) => {
+        console.log(error, '登入失敗')
+        alert('登入失敗')
+      })
     }
+
   }
 }
 </script>
