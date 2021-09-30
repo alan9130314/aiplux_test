@@ -1,10 +1,6 @@
 <template>
-  <div class="home">
-    Home
-    <p>登入狀態</p>
-    <p v-if="$store.state.user.username != ''">User : {{ $store.state.user.username }}</p>
-    <p v-else>尚未登入</p>
-    <br>
+  <div class="PostForm">
+PostForm
   </div>
 </template>
 
