@@ -20,20 +20,20 @@ export default {
   data () {
     return {
     }
-  },
-  created () {
-    this.$store.commit('Login')
-    if (this.$store.state.token) {
-      if (this.$store.state.token === null) {
-        console.log('Token驗證失敗')
-        this.$router.push('/login')
-      } else if (this.$store.state.token === 'fake-token') {
-        console.log('Token驗證成功')
-        this.$store.commit('GetUserInfo')
-      }
-    } else {
-      this.$router.push('/login')
-    }
   }
+  // created () {
+  //   this.$store.commit('Login')
+  //   if (this.$store.state.token) {
+  //     if (this.$store.state.token === null) {
+  //       console.log('Token驗證失敗')
+  //       this.$router.push('/login')
+  //     } else if (this.$store.state.token === 'fake-token') {
+  //       console.log('Token驗證成功')
+  //       this.$store.commit('GetUserInfo')
+  //     }
+  //   } else {
+  //     this.$router.push('/login')
+  //   }
+  // }
 }
 </script>
