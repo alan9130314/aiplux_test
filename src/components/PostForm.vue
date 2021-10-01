@@ -36,8 +36,6 @@ export default {
   },
   methods: {
     updatePost (postId) {
-      console.log(postId, 'patch')
-
       this.$http.patch('https://jsonplaceholder.typicode.com/posts/1',
         {
           id: this.$store.state.posts[postId - 1].id,

@@ -26,7 +26,6 @@ export default new Vuex.Store({
     createPosts (state, posts) {
       // state.posts = Object.assign({}, posts)
       state.posts = posts
-      console.log(state.posts)
     }
   },
   actions: {

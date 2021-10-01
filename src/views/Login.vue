@@ -68,8 +68,7 @@ export default {
         this.$router.push('/')
         mock.restore()
       }).catch((error) => {
-        console.log(error, '登入失敗')
-        alert('登入失敗')
+        alert(`登入失敗 ${error}`)
       })
     }
 
