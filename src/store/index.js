@@ -10,7 +10,8 @@ export default new Vuex.Store({
       password: ''
     },
     token: '',
-    loginState: false
+    loginState: false,
+    posts: []
   },
   mutations: {
     Login (state) {
@@ -21,6 +22,11 @@ export default new Vuex.Store({
     },
     GetUserInfo (state) {
       state.user = JSON.parse(localStorage.getItem('user'))
+    },
+    createPosts (state, posts) {
+      // state.posts = Object.assign({}, posts)
+      state.posts = posts
+      console.log(state.posts)
     }
   },
   actions: {

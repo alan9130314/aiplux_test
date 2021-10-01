@@ -2,7 +2,6 @@
   <div class="Navbar container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,12 +13,9 @@
             <li class="nav-item">
               <router-link to="/Login" class="nav-link " >Login</router-link>
             </li>
-            <li class="nav-item">
-              <router-link to="/Get" class="nav-link " >GetPost</router-link>
-            </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <router-link to="/Update" class="nav-link " >PostForm</router-link>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

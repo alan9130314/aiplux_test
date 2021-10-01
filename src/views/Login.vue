@@ -22,9 +22,6 @@
         </div>
         <button type="submit" class="btn btn-primary">登入</button>
       </form>
-      {{ $store.state.user.username }}
-      <br>
-      {{ $store.state.user.password }}
     </div>
   </div>
 </template>
@@ -67,12 +64,9 @@ export default {
       this.$http.post('/api/v1/login', { params: { user: { username: this.$store.state.user.username, password: this.$store.state.user.password } } }).then((response) => {
         localStorage.setItem('user', JSON.stringify(response.data.user))
         localStorage.setItem('token', response.data.token)
-        // localStorage.getItem('user')
-        // localStorage.getItem('token')
-        // console.log('登入成功')
-        // console.log(this.$store.state.loginState)
         this.$store.commit('Login')
         this.$router.push('/')
+        mock.restore()
       }).catch((error) => {
         console.log(error, '登入失敗')
         alert('登入失敗')
