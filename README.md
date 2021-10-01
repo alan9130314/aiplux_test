@@ -1,6 +1,6 @@
 # aiplux_test
 
-Demo : https://alan9130314.github.io/aiplux_test/dist/
+Demo : https://alan9130314.github.io/aiplux_test/dist/#/
 
 ## Project setup
 ```
