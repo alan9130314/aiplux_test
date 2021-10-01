@@ -7,4 +7,8 @@ Skills :
 - Vuex
 - axios-mock-adapter
 
-該專案主要用於研究上述技術之練習
+該專案主要用於研究以下技術 : 
+- 模擬登入token紀錄
+- Mock API
+- Vue Axios get、patch
+- Vuex state、mutatiton
